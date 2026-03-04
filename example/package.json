@@ -1,0 +1,14 @@
+{
+  "name": "rspress-plugin-feedback-example",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "rspress dev",
+    "build": "rspress build",
+    "preview": "rspress preview"
+  },
+  "dependencies": {
+    "rspress": "^1.39.2",
+    "rspress-plugin-feedback": "workspace:*"
+  }
+}
