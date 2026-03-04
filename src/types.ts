@@ -1,17 +1,8 @@
-export interface FeedbackData {
-  /** The text the user selected */
-  selectedText: string;
-  /** The page path where the selection was made */
-  pagePath: string;
-  /** The feedback content the user typed */
-  content: string;
-  /** Uploaded image files */
-  images: File[];
-}
-
 export interface FeedbackPluginOptions {
-  /** Callback when feedback is submitted */
-  onSubmit: (data: FeedbackData) => void | Promise<void>;
+  /** POST endpoint URL for feedback submission */
+  endpoint: string;
+  /** Custom request headers (e.g. Authorization, X-API-Key) */
+  headers?: Record<string, string>;
   /** Dialog title. Default: "提交反馈" */
   dialogTitle?: string;
   /** Textarea placeholder text */

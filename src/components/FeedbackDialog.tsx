@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { ImageUpload } from './ImageUpload';
-import type { FeedbackData, FeedbackPluginOptions } from '../types';
+import type { FeedbackPluginOptions } from '../types';
 import styles from '../styles/feedback-dialog.module.css';
 
 interface FeedbackDialogProps {
@@ -16,7 +16,8 @@ export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
   onClose,
 }) => {
   const {
-    onSubmit,
+    endpoint,
+    headers,
     dialogTitle = '提交反馈',
     placeholder = '请描述你的反馈...',
     maxImages = 5,
@@ -34,20 +35,34 @@ export const FeedbackDialog: React.FC<FeedbackDialogProps> = ({
     setStatus('loading');
     setErrorMsg('');
 
-    const data: FeedbackData = {
-      selectedText,
-      pagePath: window.location.pathname,
-      content: content.trim(),
-      images,
-    };
+    const formData = new FormData();
+    formData.append('selectedText', selectedText);
+    formData.append('pagePath', window.location.pathname);
+    formData.append('content', content.trim());
+    images.forEach((file) => formData.append('images', file));
 
     try {
-      await onSubmit(data);
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { ...headers },
+        body: formData,
+      });
+
+      if (!res.ok) {
+        const errMsg = await res
+          .json()
+          .then((j) => j.message)
+          .catch(() => res.statusText);
+        throw new Error(errMsg);
+      }
+
       setStatus('success');
       setTimeout(onClose, 1500);
     } catch (err) {
       setStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Submission failed');
+      setErrorMsg(
+        err instanceof Error ? err.message : 'Submission failed',
+      );
     }
   };
 

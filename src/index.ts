@@ -2,7 +2,7 @@ import { RspressPlugin } from '@rspress/shared';
 import path from 'path';
 import { FeedbackPluginOptions } from './types';
 
-export type { FeedbackData, FeedbackPluginOptions } from './types';
+export type { FeedbackPluginOptions } from './types';
 
 export function pluginFeedback(options: FeedbackPluginOptions): RspressPlugin {
   return {
