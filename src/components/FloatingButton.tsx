@@ -13,8 +13,10 @@ export const FloatingButton: React.FC<FloatingButtonProps> = ({
   text,
   onClick,
 }) => {
-  const top = rect.top + window.scrollY - 40;
-  const left = rect.left + window.scrollX + rect.width / 2;
+  // position: fixed is relative to viewport, and getBoundingClientRect()
+  // also returns viewport coordinates, so no scroll offset needed.
+  const top = rect.top - 40;
+  const left = rect.left + rect.width / 2;
 
   return createPortal(
     <button
