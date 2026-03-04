@@ -1,1 +1,31 @@
-/* Global styles for rspress-plugin-feedback */
+:root {
+  --feedback-bg: #fff;
+  --feedback-text: #1a1a1a;
+  --feedback-text-secondary: #666;
+  --feedback-border: #d9d9d9;
+  --feedback-selected-bg: #f5f5f5;
+  --feedback-primary: #1677ff;
+  --feedback-primary-hover: #4096ff;
+  --feedback-success: #52c41a;
+  --feedback-error: #ff4d4f;
+  --feedback-disabled-bg: #d9d9d9;
+  --feedback-overlay: rgba(0, 0, 0, 0.45);
+  --feedback-shadow: rgba(0, 0, 0, 0.08);
+  --feedback-button-shadow: rgba(0, 0, 0, 0.15);
+}
+
+.dark {
+  --feedback-bg: #1f1f1f;
+  --feedback-text: #e5e5e5;
+  --feedback-text-secondary: #999;
+  --feedback-border: #424242;
+  --feedback-selected-bg: #2a2a2a;
+  --feedback-primary: #1677ff;
+  --feedback-primary-hover: #4096ff;
+  --feedback-success: #52c41a;
+  --feedback-error: #ff4d4f;
+  --feedback-disabled-bg: #424242;
+  --feedback-overlay: rgba(0, 0, 0, 0.65);
+  --feedback-shadow: rgba(0, 0, 0, 0.3);
+  --feedback-button-shadow: rgba(0, 0, 0, 0.4);
+}

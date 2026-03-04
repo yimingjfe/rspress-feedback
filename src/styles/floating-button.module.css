@@ -5,14 +5,14 @@
   align-items: center;
   gap: 4px;
   padding: 6px 12px;
-  background: #1677ff;
+  background: var(--feedback-primary);
   color: #fff;
   border: none;
   border-radius: 6px;
   font-size: 13px;
   line-height: 1;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--feedback-button-shadow);
   transition: background 0.2s;
   transform: translateX(-50%);
   user-select: none;
@@ -20,7 +20,7 @@
 }
 
 .floatingButton:hover {
-  background: #4096ff;
+  background: var(--feedback-primary-hover);
 }
 
 .icon {
