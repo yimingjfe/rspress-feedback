@@ -15,7 +15,9 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "example:dev": "pnpm build && cd example && pnpm dev",
-    "example:build": "pnpm build && cd example && pnpm build"
+    "example:build": "pnpm build && cd example && pnpm build",
+    "test": "pnpm test:e2e",
+    "test:e2e": "playwright test"
   },
   "peerDependencies": {
     "@rspress/shared": ">=1.0.0",
@@ -23,6 +25,7 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@rspress/shared": "^1.0.0",
     "@types/node": "^25.3.3",
     "@types/react": "^18.0.0",
