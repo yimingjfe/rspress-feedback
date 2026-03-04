@@ -1,0 +1,33 @@
+{
+  "name": "rspress-plugin-feedback",
+  "version": "0.1.0",
+  "description": "Rspress plugin for document feedback with text selection",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/components",
+    "src/hooks",
+    "src/styles",
+    "src/types.ts"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "@rspress/shared": ">=1.0.0"
+  },
+  "devDependencies": {
+    "@rspress/shared": "^1.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "license": "MIT"
+}
