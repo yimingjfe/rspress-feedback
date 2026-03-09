@@ -2,6 +2,20 @@
 
 An [Rspress](https://rspress.dev) plugin that adds interactive document feedback functionality. When users select text in your documentation, a floating button appears. Clicking it opens a feedback dialog where users can describe issues and attach screenshots.
 
+## Screenshots
+
+Select text on the page, and a floating feedback button appears:
+
+![Text selection with feedback button](docs/screenshots/2-text-selection-button.png)
+
+Click the button to open the feedback dialog:
+
+![Feedback dialog](docs/screenshots/4-dialog-filled.png)
+
+Feedback submitted successfully:
+
+![Submit success](docs/screenshots/5-submit-success.png)
+
 ## Features
 
 - Text selection detection with floating feedback button

@@ -17,7 +17,8 @@
     "example:dev": "pnpm build && cd example && pnpm dev",
     "example:build": "pnpm build && cd example && pnpm build",
     "test": "pnpm test:e2e",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "screenshots": "npx tsx scripts/take-screenshots.ts"
   },
   "peerDependencies": {
     "@rspress/shared": ">=1.0.0",
@@ -33,6 +34,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tsup": "^8.0.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.0.0"
   },
   "license": "MIT"
